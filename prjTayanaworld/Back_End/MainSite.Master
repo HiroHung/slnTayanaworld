@@ -1,0 +1,180 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSite.master.cs" Inherits="prjTayanaworld.Back_End.MainSite" %>
+
+<%@ Register Assembly="CKFinder" Namespace="CKFinder" TagPrefix="CKFinder" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>後臺管理系統</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <link href="thclass.css" rel="stylesheet" />
+    <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <!-- Core Scripts - Include with every page -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/plugins/pace/pace.js"></script>
+    <script src="assets/scripts/siminta.js"></script>
+    <!-- Page-Level Plugin Scripts-->
+    <script src="assets/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/plugins/morris/morris.js"></script>
+    <script src="assets/scripts/dashboard-demo.js"></script>
+    <!-- dataTablepage -->
+    <script src="assets/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+    <!-- CKeditor Scripts-->
+    <script src="../Scripts/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="topConttent">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+                    <!-- navbar-header -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.aspx">
+                            <img src="assets/img/logo3.png" alt="" style="height: 300%" />
+                        </a>
+                    </div>
+                    <!-- end navbar-header -->
+                    <!-- navbar-top-links -->
+                    <ul class="nav navbar-top-links navbar-right" style="padding-right: 1%">
+                        <!-- main dropdown -->
+                        <%--<li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-3x"></i>
+                            </a>--%>
+                            <!-- dropdown-messages -->
+                            <%--<ul class="dropdown-menu dropdown-messages">
+                                <%--<li>
+                                    <a href="#">
+                                        <div>
+                                            <strong><span class=" label label-danger">Andrew Smith</span></strong>
+                                            <span class="pull-right text-muted">
+                                                <em>Yesterday</em>
+                                            </span>
+                                        </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                    </a>
+                                </li>--%>
+                                <%--<li class="divider"></li>--%>
+                                <%-- <li>
+                                    <a href="#">
+                                        <div>
+                                            <strong><span class=" label label-info">Jonney Depp</span></strong>
+                                            <span class="pull-right text-muted">
+                                                <em>Yesterday</em>
+                                            </span>
+                                        </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>--%>
+                                <%--<li>
+                                    <a href="#">
+                                        <div>
+                                            <strong><span class=" label label-success">Jonney Depp</span></strong>
+                                            <span class="pull-right text-muted">
+                                                <em>Yesterday</em>
+                                            </span>
+                                        </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>--%>
+                                <%--<li>
+                                    <a class="text-center" href="#">
+                                        <strong>Read All Messages</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>--%>
+                            <!-- end dropdown-messages -->
+                        <%--</li>--%>
+                        <!-- end dropdown-alerts -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-3x"></i>
+                            </a>
+                            <!-- dropdown user-->
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="UserProfile.aspx"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                                    <%--</li>
+                                <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
+                                </li>--%>
+                                <li class="divider"></li>
+                                <li><a href="Login.aspx" onclick="return confirm('是否要登出？')"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                                </li>
+                            </ul>
+                            <!-- end dropdown-user -->
+                        </li>
+                        <!-- end main dropdown -->
+                    </ul>
+                    <!-- end navbar-top-links -->
+                </nav>
+            </div>
+
+            <div id="leftContent">
+                <nav class="navbar-default navbar-static-side" role="navigation">
+                    <!-- sidebar-collapse -->
+                    <div class="sidebar-collapse">
+                        <!-- side-menu -->
+                        <ul class="nav" id="side-menu">
+                            <li>
+                                <!-- user image section-->
+                                <div class="user-section">
+                                    <div class="user-section-inner">
+                                        <%--<img src="assets/img/user.jpg" alt="" runat="server" id="userImg">--%>
+                                        <asp:Image ID="userImg" runat="server" ImageUrl="assets/img/user.jpg" />
+                                    </div>
+                                    <div class="user-info">
+                                        <div>
+                                            <!-- 使用者名稱 -->
+                                            <strong>
+                                                <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label></strong>
+                                        </div>
+                                        <div class="user-text-online">
+                                            <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end user image section-->
+                            </li>
+                            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                        </ul>
+                        <!-- second-level-items -->
+                        </li>
+                            <!-- end side-menu -->
+                    </div>
+                    <!-- end sidebar-collapse -->
+                </nav>
+            </div>
+            <div id="mainContent">
+                <div id="page-wrapper">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
